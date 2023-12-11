@@ -1,1 +1,1 @@
-# java-devcamp-2023
+# Java DevCamp 2023
