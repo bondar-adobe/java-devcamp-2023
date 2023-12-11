@@ -3,7 +3,7 @@
 Welcome to the first workshop of the 2023 edition of Adobe Java DevCamp!
 
 Workshop resources:
-- [Presentation]()
+- [Presentation](./JavaDevCamp2023-Workshop%201.pptx)
 - [Version Control Systems](git.md)
 - [Maven](maven.md)
 
