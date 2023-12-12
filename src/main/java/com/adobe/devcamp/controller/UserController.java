@@ -1,36 +1,44 @@
 package com.adobe.devcamp.controller;
 
+import com.adobe.devcamp.dto.UserDTO;
 import com.adobe.devcamp.model.Gender;
-import com.adobe.devcamp.model.User;
-import com.adobe.devcamp.service.AdvertisingService;
+import com.adobe.devcamp.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class UserController {
-    private final AdvertisingService<User> userService;
+    private final UserService userService;
 
-    public UserController(AdvertisingService<User> userService) {
+    @Autowired
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
+    @PostMapping(path = "/users",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public UserDTO createUser(@RequestBody UserDTO userDTO) {
+        // TODO: implement this
+        return userDTO;
+    }
+
     @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<User> getAllUsers() {
-        return new ArrayList<>(userService.selectAll(User.class).values());
+    public List<UserDTO> getAllUsers() {
+        // TODO: implement this
+        return List.of(new UserDTO("someId", "bondar@adobe.com", Gender.FEMALE, 26, Collections.emptyList()));
+//        return Collections.emptyList();
     }
-    
-    //TODO: Implement the following method:
-    @GetMapping(path = "/users", params = "gender", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<User> getUsersByGender(@RequestParam(name = "gender") String gender) {
-        
-        //DELETE THIS LINE WHEN YOU START IMPLEMENTING THIS METHOD
-        return null;
-    }
+
+    // TODO: add functionality for:
+    //      - retrieving a user by id
+    //      - deleting a user
 }
 

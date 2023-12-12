@@ -7,7 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * An advertiser might be an app (like a mobile game or an e-commerce platform) or a brand who have a message they want people to see
+ * An advertiser might be an app (like a mobile game or an e-commerce platform) or
+ * a brand who has a message they want people to see
  */
 public final class Advertiser {
 
@@ -31,9 +32,13 @@ public final class Advertiser {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Advertiser that = (Advertiser) o;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final Advertiser that = (Advertiser) o;
         return Objects.equals(getName(), that.getName()) &&
                 Objects.equals(getPublishers(), that.getPublishers());
     }

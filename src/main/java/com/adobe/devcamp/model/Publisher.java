@@ -11,14 +11,14 @@ import java.util.Set;
  * A publisher is a place to display that message
  */
 public final class Publisher {
- private final String name;
+    private final String name;
     private final Set<Domain> domains;
     private final List<Integer> users;
     private final List<Integer> advertisers;
 
     @JsonCreator
     public Publisher(@JsonProperty(value = "name") String name,
-                     @JsonProperty(value= "domains") Set<Domain> domains,
+                     @JsonProperty(value = "domains") Set<Domain> domains,
                      @JsonProperty(value = "users") List<Integer> users,
                      @JsonProperty(value = "advertisers") List<Integer> advertisers) {
         this.name = name;
@@ -45,9 +45,13 @@ public final class Publisher {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Publisher publisher = (Publisher) o;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final Publisher publisher = (Publisher) o;
         return Objects.equals(getName(), publisher.getName()) &&
                 Objects.equals(getDomains(), publisher.getDomains()) &&
                 Objects.equals(getUsers(), publisher.getUsers()) &&
@@ -56,16 +60,17 @@ public final class Publisher {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getDomains(), getUsers(), getAdvertisers());
+        return Objects.hash(getName(),
+                getDomains(),
+                getUsers(),
+                getAdvertisers());
     }
 
     @Override
     public String toString() {
-        return "Publisher{" +
-                "name='" + name + '\'' +
+        return "Publisher{" + "name='" + name + '\'' +
                 ", domains=" + domains +
                 ", users=" + users +
-                ", advertisers=" + advertisers +
-                '}';
+                ", advertisers=" + advertisers + '}';
     }
 }

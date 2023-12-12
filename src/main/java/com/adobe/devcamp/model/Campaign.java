@@ -52,9 +52,13 @@ public final class Campaign {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Campaign campaign = (Campaign) o;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        final Campaign campaign = (Campaign) o;
         return Objects.equals(getName(), campaign.getName()) &&
                 Objects.equals(getStartTime(), campaign.getStartTime()) &&
                 Objects.equals(getEndTime(), campaign.getEndTime()) &&
@@ -113,9 +117,13 @@ public final class Campaign {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Target target = (Target) o;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            final Target target = (Target) o;
             return getMinAge() == target.getMinAge() &&
                     getMaxAge() == target.getMaxAge() &&
                     getGender() == target.getGender() &&
