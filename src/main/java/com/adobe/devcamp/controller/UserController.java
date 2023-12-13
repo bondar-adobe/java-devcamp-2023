@@ -5,10 +5,7 @@ import com.adobe.devcamp.model.Gender;
 import com.adobe.devcamp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
@@ -36,13 +33,10 @@ public class UserController {
         return Collections.emptyList();
     }
 
-    @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserDTO getUserById() {
+    @GetMapping(path = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserDTO getUserById(@PathVariable("id") String id) {
         // TODO: implement this
         return null;
     }
-
-    // TODO: add functionality for:
-    //      - deleting a user
 }
 
