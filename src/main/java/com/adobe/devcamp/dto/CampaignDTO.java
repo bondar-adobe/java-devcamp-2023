@@ -1,6 +1,5 @@
 package com.adobe.devcamp.dto;
 
-import com.adobe.devcamp.model.Campaign;
 import com.adobe.devcamp.model.Domain;
 import com.adobe.devcamp.model.Gender;
 import com.adobe.devcamp.model.State;
@@ -12,7 +11,7 @@ public class CampaignDTO {
     private final String name;
     private final Long startTime;
     private final Long endTime;
-    private final Campaign.Target target;
+    private final CampaignDTO.Target target;
     private final String advertiserId;
     private final State state;
 
@@ -21,7 +20,7 @@ public class CampaignDTO {
             String name,
             Long startTime,
             Long endTime,
-            Campaign.Target target,
+            CampaignDTO.Target target,
             String advertiserId,
             State state) {
         this.id = id;

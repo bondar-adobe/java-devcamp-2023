@@ -33,12 +33,16 @@ public class UserController {
     @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<UserDTO> getAllUsers() {
         // TODO: implement this
-        return List.of(new UserDTO("someId", "bondar@adobe.com", Gender.FEMALE, 26, Collections.emptyList()));
-//        return Collections.emptyList();
+        return Collections.emptyList();
+    }
+
+    @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserDTO getUserById() {
+        // TODO: implement this
+        return null;
     }
 
     // TODO: add functionality for:
-    //      - retrieving a user by id
     //      - deleting a user
 }
 

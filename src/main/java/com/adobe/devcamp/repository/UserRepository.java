@@ -23,15 +23,21 @@ public class UserRepository implements GenericRepository<UserDTO> {
 
     @Override
     public Optional<UserDTO> findById(String id) {
+        for (UserDTO userDTO : storedUsers) {
+            if (userDTO.getId().equals(id)) {
+                return Optional.of(userDTO);
+            }
+        }
         return Optional.empty();
     }
 
     @Override
     public List<UserDTO> findAll() {
-        return null;
+        return storedUsers;
     }
 
     @Override
     public void deleteById(String id) {
+        // TODO: implement this
     }
 }
