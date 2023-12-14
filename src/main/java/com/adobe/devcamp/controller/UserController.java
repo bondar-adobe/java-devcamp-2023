@@ -23,14 +23,12 @@ public class UserController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserDTO createUser(@RequestBody UserDTO userDTO) {
-        // TODO: implement this
-        return userDTO;
+        return userService.createUser(userDTO);
     }
 
     @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<UserDTO> getAllUsers() {
-        // TODO: implement this
-        return Collections.emptyList();
+        return userService.getAllUsers();
     }
 
     @GetMapping(path = "/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
