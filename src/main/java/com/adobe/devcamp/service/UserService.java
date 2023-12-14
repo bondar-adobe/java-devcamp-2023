@@ -28,10 +28,12 @@ public class UserService {
     }
 
     public List<UserDTO> getAllUsers() {
-        return Collections.emptyList();
+        return userRepository.findAll();
     }
 
     public UserDTO createUser(UserDTO userDTO) {
+        // TODO: set id
+        userRepository.save(userDTO);
         return userDTO;
     }
 
