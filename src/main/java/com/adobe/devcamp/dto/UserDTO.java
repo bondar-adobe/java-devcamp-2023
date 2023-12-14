@@ -8,11 +8,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public final class UserDTO {
-    private String id;
-    private String email;
-    private Gender gender;
-    private Integer age;
-    private List<Domain> interests;
+    private final String id;
+    private final String email;
+    private final Gender gender;
+    private final Integer age;
+    private final List<Domain> interests;
 
     @JsonCreator
     public UserDTO(@JsonProperty(value = "id") String id,

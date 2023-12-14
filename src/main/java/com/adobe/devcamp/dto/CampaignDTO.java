@@ -4,13 +4,14 @@ import com.adobe.devcamp.model.Domain;
 import com.adobe.devcamp.model.Gender;
 import com.adobe.devcamp.model.State;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class CampaignDTO {
     private final String id;
     private final String name;
-    private final Long startTime;
-    private final Long endTime;
+    private final Timestamp startTime;
+    private final Timestamp endTime;
     private final CampaignDTO.Target target;
     private final String advertiserId;
     private final State state;
@@ -18,8 +19,8 @@ public class CampaignDTO {
     public CampaignDTO(
             String id,
             String name,
-            Long startTime,
-            Long endTime,
+            Timestamp startTime,
+            Timestamp endTime,
             CampaignDTO.Target target,
             String advertiserId,
             State state) {
