@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "3e0cea04-c0ed-4c47-97eb-92b074d664a5",
+		"name": "DevCamp 2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15892219"
+	},
+	"item": [
+		{
+			"name": "Get user by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/users/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6723a03b-a5a9-4a87-9bb9-4faf2f6825e1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"aispas@adobe.com\",\n    \"gender\": \"FEMALE\",\n    \"age\": 23,\n    \"interests\": [\"FASHION\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:8383/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create campaign",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"some-campaign-name\",\n    \"advertiserId\": \"<to be added>\",\n    \"target\": {\n        \"gender\": \"FEMALE\",\n        \"interests\": [\"FASHION\"]\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:8383/campaigns",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create advertiser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"coolest-advertiser\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8383/advertisers",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"advertisers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get advertiser by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"coolest-advertiser\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8383/advertisers/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"advertisers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all advertisers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"coolest-advertiser\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8383/advertisers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"advertisers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/users/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete campaign",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/campaign/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"campaign",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete advertiser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/advertisers/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"advertisers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users from a campaign",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8383/campaigns/:id/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8383",
+					"path": [
+						"campaigns",
+						":id",
+						"users"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
