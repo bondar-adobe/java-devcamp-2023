@@ -3,18 +3,19 @@ package com.adobe.devcamp.dto;
 import com.adobe.devcamp.model.Domain;
 import com.adobe.devcamp.model.Gender;
 import com.adobe.devcamp.model.State;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Timestamp;
 import java.util.List;
 
 public class CampaignDTO {
-    private final String id;
-    private final String name;
-    private final Timestamp startTime;
-    private final Timestamp endTime;
-    private final CampaignDTO.Target target;
-    private final String advertiserId;
-    private final State state;
+    @JsonProperty private String id;
+    @JsonProperty private String name;
+    @JsonProperty private Timestamp startTime;
+    @JsonProperty private Timestamp endTime;
+    @JsonProperty private CampaignDTO.Target target;
+    @JsonProperty private String advertiserId;
+    @JsonProperty private State state = State.ACTIVE;
 
     public CampaignDTO(
             String id,
@@ -33,6 +34,8 @@ public class CampaignDTO {
         this.state = state;
     }
 
+    public CampaignDTO() {}
+
     public static class Target {
         public Target(Gender gender,
                       List<Domain> interests,
@@ -44,9 +47,39 @@ public class CampaignDTO {
             this.maxAge = maxAge;
         }
 
-        private final Gender gender;
-        private final List<Domain> interests;
-        private final Integer minAge;
-        private final Integer maxAge;
+        public Target() {}
+
+        @JsonProperty private Gender gender;
+        @JsonProperty private List<Domain> interests;
+        @JsonProperty private Integer minAge;
+        @JsonProperty private Integer maxAge;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Timestamp getStartTime() {
+        return startTime;
+    }
+
+    public Timestamp getEndTime() {
+        return endTime;
+    }
+
+    public Target getTarget() {
+        return target;
+    }
+
+    public String getAdvertiserId() {
+        return advertiserId;
+    }
+
+    public State getState() {
+        return state;
     }
 }

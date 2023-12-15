@@ -1,16 +1,8 @@
 package com.adobe.devcamp.repository;
 
-import com.adobe.devcamp.dto.CampaignDTO;
-import org.springframework.stereotype.Component;
+import com.adobe.devcamp.model.Campaign;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.LinkedList;
-import java.util.List;
-
-@Component
-public class CampaignRepository {
-    private List<CampaignDTO> storedCampaigns;
-
-    public CampaignRepository() {
-        this.storedCampaigns = new LinkedList<>();
-    }
-}
+@Repository
+public interface CampaignRepository extends JpaRepository<Campaign, String> {}
