@@ -3,8 +3,6 @@ services:
   campaignmanagersql:
     container_name: campaignmanagersql
     build: .
-    cap_add:
-      - SYS_PTRACE
     environment:
       - 'MYSQL_ROOT_PASSWORD=P@ssw0rd'
       - 'MYSQL_DATABASE=campaign_manager_db'

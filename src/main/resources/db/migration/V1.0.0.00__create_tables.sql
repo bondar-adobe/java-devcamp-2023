@@ -18,8 +18,8 @@ CREATE TABLE IF NOT EXISTS advertiser (
 CREATE TABLE IF NOT EXISTS advertising_campaign (
     id            VARCHAR(60)     PRIMARY KEY,
     name          VARCHAR(60)     NOT NULL,
-    start_time     TIMESTAMP       NOT NULL,
-    end_time       TIMESTAMP       NOT NULL,
+    start_time    TIMESTAMP       NOT NULL,
+    end_time      TIMESTAMP       NOT NULL,
     target        VARCHAR(255)    NOT NULL,
     advertiser_id VARCHAR(60)     NOT NULL,
     state         VARCHAR(60)     NOT NULL,
