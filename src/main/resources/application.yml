@@ -1,2 +1,25 @@
 server:
   port: 8383
+
+spring:
+  profiles:
+    active: local
+  flyway:
+    baseline-on-migrate: true # Flyway will perform a baseline migration if no metadata table is found. This initializes
+#    an empty database or marks the current schema version as the baseline.
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/campaign_manager_db # how to connect to the specified database
+    username: SA                                         # username and password for the connection
+    password: P@ssw0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: connPool
+      maximum-pool-size: 10
+      idleTimeout: 30000
+      connectionTimeout: 1000
+      minimum-idle: 10
+      connectionTestQuery: "SELECT 1"
+  jpa:
+    hibernate:
+      ddl-auto: validate      # validate the schema against the entities

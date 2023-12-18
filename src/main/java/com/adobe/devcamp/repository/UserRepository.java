@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+// TODOs: - unmock this repository
+//        - define some JPA queries
+//        - what's Optional?
+
 @Component
 public class UserRepository implements GenericRepository<UserDTO> {
     private List<UserDTO> storedUsers;

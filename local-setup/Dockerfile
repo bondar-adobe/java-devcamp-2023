@@ -1,0 +1,8 @@
+FROM mysql:latest
+
+EXPOSE 3306
+
+ENV MYSQL_ROOT_PASSWORD "P@ssw0rd"
+ENV MYSQL_DATABASE "campaign_manager_db"
+ENV MYSQL_USER "SA"
+ENV MYSQL_PASSWORD "P@ssw0rd"
