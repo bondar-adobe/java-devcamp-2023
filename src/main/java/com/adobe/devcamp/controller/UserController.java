@@ -47,7 +47,7 @@ public final class UserController {
         userService.deleteUserById(id);
     }
 
-    @GetMapping(path = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/users/custom", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(OK)
     public List<UserDTO> getAllFemaleUsersYoungerThan30() {
         return userService.getAllFemaleUsersYoungerThan30();

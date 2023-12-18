@@ -1,13 +1,14 @@
 package com.adobe.devcamp.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import java.sql.Timestamp;
 
-@Entity
+@Entity // This class represents a table in the database
 public class User {
-    @Id private String id;
+    @Id private String id; // the primary key of your entity
     private String email;
     private String gender;
     private int age;
