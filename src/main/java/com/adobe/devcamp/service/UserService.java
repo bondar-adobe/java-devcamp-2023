@@ -1,6 +1,7 @@
 package com.adobe.devcamp.service;
 
 import com.adobe.devcamp.dto.UserDTO;
+import com.adobe.devcamp.model.Gender;
 import com.adobe.devcamp.model.User;
 import com.adobe.devcamp.repository.UserRepository;
 import com.adobe.devcamp.utils.DTOFactory;
@@ -30,25 +31,30 @@ public class UserService {
     }
 
     public UserDTO getUserById(String id) {
-        return userRepository.findById(id)
-                .map(dtoFactory::userEntityToDTO)
-                .orElse(null);
+        // TODO: uncomment this
+//        return userRepository.findById(id)
+//                .map(dtoFactory::userEntityToDTO)
+//                .orElse(null);
+        return null;
     }
 
     public List<UserDTO> getAllUsers() {
-        return userRepository.findAll()
-                .stream().map(dtoFactory::userEntityToDTO)
-                .collect(java.util.stream.Collectors.toList());
+        // TODO: uncomment this
+//        return userRepository.findAll()
+//                .stream().map(dtoFactory::userEntityToDTO)
+//                .collect(java.util.stream.Collectors.toList());
+
+        return userRepository.findAll();
     }
 
     public UserDTO createUser(UserDTO userDTO) {
-        final User user = entityFactory.userDTOToEntity(userDTO);
-        final User savedUser = userRepository.save(user);
-        return dtoFactory.userEntityToDTO(savedUser);
+        // TODO: use JPA here
+        userRepository.save(userDTO);
+        return userDTO;
     }
 
     public void deleteUserById(String userId) {
-        userRepository.deleteById(userId);
+        // TODO: implement this
     }
 
     public List<UserDTO> getAllFemaleUsersYoungerThan30() {

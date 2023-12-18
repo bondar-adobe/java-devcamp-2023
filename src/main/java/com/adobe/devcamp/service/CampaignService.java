@@ -7,6 +7,7 @@ import com.adobe.devcamp.repository.CampaignRepository;
 import com.adobe.devcamp.utils.DTOFactory;
 import com.adobe.devcamp.utils.EntityFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class CampaignService {
         this.entityFactory = entityFactory;
         this.dtoFactory = dtoFactory;
     }
-
+    
     public CampaignDTO getCampaignById(String campaignId) {
         return campaignRepository.findById(campaignId)
                 .map(dtoFactory::campaignEntityToDTO)
