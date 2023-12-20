@@ -9,5 +9,6 @@ services:
       - 'MYSQL_USER=SA'
       - 'MYSQL_PASSWORD=P@ssw0rd'
     hostname: 'adminhost'
+#   maps port 3306 on the host to port 3306 in the container.
     ports:
       - '3306:3306'
