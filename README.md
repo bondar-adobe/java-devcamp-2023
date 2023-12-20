@@ -11,3 +11,5 @@ Thank you for being a part of this learning experience, and we hope you find the
 Please find below the resources for each session:
 
 - [Workshop #1](workshop1/README.md)
+- [Workshop #2](workshop2/README.md)
+- [Workshop #3](workshop3/README.md)
