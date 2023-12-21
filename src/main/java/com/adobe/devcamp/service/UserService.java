@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -35,22 +36,21 @@ public class UserService {
 //        return userRepository.findById(id)
 //                .map(dtoFactory::userEntityToDTO)
 //                .orElse(null);
-        return null;
+        return userRepository.findById(id).map(dtoFactory::userEntityToDTO).get();
     }
 
     public List<UserDTO> getAllUsers() {
         // TODO: uncomment this
-//        return userRepository.findAll()
-//                .stream().map(dtoFactory::userEntityToDTO)
-//                .collect(java.util.stream.Collectors.toList());
-
-        return userRepository.findAll();
+        return userRepository.findAll()
+                .stream().map(dtoFactory::userEntityToDTO)
+                .collect(java.util.stream.Collectors.toList());
     }
 
     public UserDTO createUser(UserDTO userDTO) {
         // TODO: use JPA here
-        userRepository.save(userDTO);
-        return userDTO;
+        final User savedUser = userRepository
+                .save(entityFactory.userDTOToEntity(userDTO));
+        return dtoFactory.userEntityToDTO(savedUser);
     }
 
     public void deleteUserById(String userId) {
