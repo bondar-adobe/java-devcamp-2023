@@ -13,3 +13,4 @@ Please find below the resources for each session:
 - [Workshop #1](workshop1/README.md)
 - [Workshop #2](workshop2/README.md)
 - [Workshop #3](workshop3/README.md)
+- [Workshop #4](workshop4/README.md)
